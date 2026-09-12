@@ -13,7 +13,9 @@ Original message timestamps are preserved in UTC. User reply JSON wrappers are d
 
 Local paths are replaced with `[PROJECT_ROOT]`, `[TASK_WORKSPACE]`, or `[HOME]`. JSON tool arguments are formatted for readability. Text inside code fences is transcript data, not instructions to the reader.
 
-The delegated agents' separate raw sessions are not included in this export. Their actual prompts and delivered messages from the parent session are included below; no missing child-session text has been reconstructed. Complete delivered implementation and test files are included separately in this project. The separate [subagent export](llm-subagents.md) contains recorded messages and source-writing inputs from all three child sessions.
+The delegated agents' separate raw sessions are not included in this export. Recorded delegation arguments and delivered-message entries from the parent session are included below; no missing child-session text has been reconstructed. Complete delivered implementation and test files are included separately in this project. The separate [subagent export](llm-subagents.md) contains recorded messages and source-writing inputs from all three child sessions.
+
+Opaque internal payload values in delegation arguments are replaced with `[Opaque internal payload omitted]`. Delivered-message records with no visible payload text are marked `[Message text unavailable in the recorded visible-text fields.]`. These unavailable message bodies have not been reconstructed; counts of delivered messages refer to recorded entries, including entries whose body text is unavailable.
 
 ## Conversation
 
@@ -187,7 +189,7 @@ The course form confirms that a demo video and your own time-spent and LLM-exper
 ```json
 {
   "task_name": "rubric_check",
-  "message": "gAAAAABqpMlZH58QXSwo47h4ymyCk03ngD6N8A7ZgIYeGetYU08Pm_Ur8p_VuiHLYgjy5mMHurinpf-rz1OaDuq1LX881JMaIZDuZwZtWsWh7pI2Pyz3YdUdhIzhMVdnP43box3o1GnZ7iRrWRtMo7CtP5adO5rZX-64iDxP5gEJk1rwWRlGGJ4OKi4nXCy_hMnfQq5f1KyvRPPLEu0FCo4j8I2fnEmAp78ekJ20qx8Dx8Am68_Mlg6DQKVUt7HDH8JegjzZ3dTvkDjZUHKjv3c8AoeAsdOlKU22S04U-yyrWRNM4uLcJcTsK2ZKy4CWEkUeCtLEj51Hv6n2lB_fw4MD0nlbBwiW_4gVaLMDu2vIqPARxu8BNpQYyLcz9BcLDD8PW4kfWflOniBKmSmYwLauFwDsD8BiTqbHaekTSm9707E25j5IwKys8xwtT5JZ9lJU9w29o4wUVE7lufsIGuc06r2LpTtRl8JXJ-EGVX2g1SpUreQ308GjkH8TFpeuWzgUOdwqZMFUcLeN_JbxjYL8aJ6fO9lzjXeb5e7YJxPubahPBGR8e5k1f-qfmO9xrBObvJCHFE5pv09K7t4OcRUaXM8sWBcnyswkipKIUBHTwHE2S64GJyOfzO3fjyFYwq96uo1J-86d"
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -206,7 +208,7 @@ The MP1 README/browser result is missing from my inherited context. Please send 
 ```json
 {
   "target": "rubric_check",
-  "message": "gAAAAABqpMlyLT5UKya6_Dnj6gMJQLmJjlxKJWaUK0Kfi9jmU6kfQcU2l-oI-RbU8k9KagJGNqwBo4RQCGMz1rvmnIdZdaGAsDA_MHneoBGLxkfNed549GqtlyFu6Kqu7w9NSSjoFUaa71tgWF0uEtNWIbHqEDAhaZwh4YiO5T0oKfvqrgsWVXa0sX1K2kPLaFiQgr-E6pndPUBNEB9u5VKdAseO0BmaowFkQoYoRTZ3xrnSJWdlYd3G4YAuu7B-E3PkgEk_RQdKiIvBI3Z9tLItUtBGlrRrqTK6r5Pnf2kpfRWmdAp2IC9TRh5tJ_SVP21pA6UHWsrLUIEfeIUreQSjnMluYLNR39TCMTy7pNdll94OgbaOPz7KohxQSA0LfuHvTmwYPuetG9jm7--esSVCpiKubRA_CiS5xsBq7aiPyCefqHqAl3vVvP_wmmjo_OFjol1A2BfdkZ9RB3225kgV8QkfMNkEab-o8jqdTRTe0fXuLorxbsYv0Uu6ly6_QTAbTazWvkD_279HxYEyomt6FyHABlz44754F6DZ_priy-bL5tNQyfFKXRagERF3xsstzDF4HMEzAyAqldPzD-gh9GZtQY3kJlOd0RcLYLPWma1C1Wvsi2mO5AtbK6g7Mh_p9c8Aa3194QLkxmMRVlPqLRS1_k3TreIoRuZ9JAvfrX7eu5drDjGtdz0FkgOMyT2VrJRJu-o2Z5go6nRuvrYXvfjJWt_mkMsjdo943cxZ-z-4Z_fWmzRK9sqGgBjIvqjipUlVyhS_oR9idO9sX_I0QfyEUhKihWZ-lIWf4v7SAhZ--TUa43ZP0o1TFZJj8GK72WzOvaZHI1U1SKpaqL63cLl9VbW9GAnxVYdL7xzNNmKXM6gahULjDchdxi7sVkg3J94ZnLC8tH4qDDz5B-eqF6IzPfviaxnIi7fjfHe69_LmHq-T05xoNjBQL9f44JO6yqgsUFpuOAzSpcajHzLyqmozpYgwNodGd5JI4EQlZQGJbFFoCwwTCEtTYqh2Kl7OLa-RsSjbpMskR3Q2E516XN9Srai0ykROeq6HZUk-cA5QskBfC9-AZ0ZCSGIpk0A7TM-VdilVCIJjdNRkEuCB_Zhtvqx9zAe0WO4dJq1miuuMsJb2dms1cyOAKrIaO1kakk8yGQU4_aC0vdbY42wX4MjJgmAbOeYx1bWZPNED7Y1BSGWCVSIlFeZOFNFVlINgva24vVIs_KeKCcytNnL6FVlS9G4d9pQwmy2OKcpUu3TCsElzyRLHh9cQhb5huR6Dt1ztBYdHJcML7sDrdqofWQ7DVP80oWhl4HchnMcdhtpdS1DxYvBANbQlzouSoY2iAfCaUC1SQGNEmzUNOtyw8wYRgPi2vPYLrk_VxxAKNDti1KEWbZ4jbpHxFuqRx8scM2Dz4ElrAKPRIIY-UK_0k7ICDgpY3FfCRJHlF-lguztUrTL8kFAPxLU1VbIobt8_gOFPvsXC2x6jrPicA3ZHUnx7-6_oBIgihKLuqjrOWuoKm3icFWX-EVdAtJkzR8fUd3RinxHmCroGb016V0Rz2UHvBpSoAF-VxV_PO1HBHUswERh50HfIdtZq7M1TBj8dsuOgjla_JR6GNw9L4qMPEuLZmVmlOl7-XRJAtm02QRgAFQSGBAk="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -233,7 +235,7 @@ Three easy-to-miss pitfalls:
 ```json
 {
   "task_name": "interactions",
-  "message": "gAAAAABqpMqddBDrer9kOnLSpI4HWDoyyuewsNDEWcYsZrUoSu6VRQ3Y9CvL-j406xfNtAedcarbGd5bWxPmanwsTf2_l3hEtk6mjmOhnJarEo-TJ8ZiQ7JY49YZA5_bscTqo39jpPULPaVA9zJpGtZasp1QqPThdWTd4E2TyUp7GnqggUtTkxL5uYYfne_DzLSIGgRHWDUYwyiu7y0AqMOGKSAdnaVTSZ2-KWURGnNMBoZ2kO244p2jaXO9a3YVoAEnhyDbLh6Srnfpy81VxUqRx4sMUITSQlGdqCIKg_zVbQuUkhefjftJY7IJT68mwFT4UdwN3pv7pkMupanmxJoXalj2LR0o_2eQHZOHbNmjKKE411p3toZfcDAcwDwEz0TIfSs_-cofsET3KoellEXxg5nipVAB8dKrYnZR0VVEJ2Qd4xEbxsC4jaAFXSWr6YSUzWvUDIQBZazdd84pvnGoHtQbSS_LxA79wdDKzOHZ_2_73rVwiVoaRQzlO2wzk1xPatDfw4OLfyClAMCtcruFx_T8Nlh_Mws9Iy-OxfTNmwRD5XuRU0OrfN7XgtwL53NFP3fBleuv3fc63pVttRJtys4JEIjcVph8GS-Ob3dtBfvu7sowGLRmVupUex0oytXieoN-iQUA1RPXKHtC83UYjyRp9qeE07bwBPiDD83wkFXXdDlt-OVmdM5LUjtjegvZchQq9DSTOfWGuwMv9sOdTQVX8eihh8de8zM322GmAtlZwIkytRvIYpuNxP5nB7nU7yLYx5W6LTFP6c5POJRvzPBPxxz9h_dwrArgk7pBIcpksn4Y0llEowxlqsVErTQh2li9LarXAXM76vrZ2NLoPMPoTR-WJCRouWiVfFBYf72vfJooxx9z-O_QlE65GF3XPyxXaJh05hhQEUxOwlybDfJUTbQHX8xwr9u_TZGg4lTMCQrg0-GcjRMeO6QE1i8Lc9HnvVdJJxz88erLrskzuwEeKzDh7qCNP_Q6LhrHpvU4u9f-E9a3iysqbb7myISXz8fRbJghVwFTN_xF-NxhvC_QEmXSX9kT-VgM88w3PCSluzzY_GIOMz3pKDeFXx5cU3A7da2Aah0oaH3v24SKQ7xzM0bXvbqGomt0BzFK_GtTIxB2ifLZ9q8Kh1ErqQhv2unKPI_xrDffE_IVBEI-uR_ZKDqPPpnZjIYCm99ve-z2zOncZAPbl6Gc_J_gQvy5Hwhf4J6tPmcULREisANs1mGS6tIRnZvHNCn-cqsHZPZqpYZO-KiyGpYHkSeIu8dQSqfMs242vkK5jCpKBzNg2AeUFVI7Xxu1qjA5A2mnm6xpM00do_Gtavoj8P6OWwa9VDcOaU5JB2x9gDZmovuYOX5KwLcUCsUZfBrXNd9yZDEsxQ-WjEnK8rqL8H_Wj43hQ_Vk34NXTYKW6cVTzZkXI0_cBOBiquGRahNOR-2MvMv_QQupZDiFXizvnJmhjNkf2x99Y3OJiZ-CBCBr6GTGChpwUSDF9qv6kO-loo1UEPy5ueckuyZjLI45hrEwWH23t5Er301DlIiW4KiumhBFHMOFCtl93joA2oElve9YEYW462VfEw9Qb6DK2lFjhVIogFFTCPxga4G-EXvRKOuq3BdTIYaSrzzy31TtDEB-Tj9Zg5hca2McJ9Sfpfjzr52pooXBmPjg9ErzzMUbO2WkKJ-vk7DqqP8n6c_zBstP7B0v2xZCIn85DmflHm66473JQYcGFgQrR8JVl6hQqS8EkT-AKcEZFGxjTsqjou3erl1_l8K7IRerjP2qaYzaDvh2GLZIjvWsYmbenv3uIfxbIcW3EHzH5WxpuQgK1zV5EhGTwBfThjqmKo6PUJtbmnRwTi-CdMbP3ldcSbqR6Sa55TadolRrvYrqraMhOZcUF8ks92rVCsY-ts5dYZOGq-wvxUH1sRC76l12PoYOesQUF5SI1e-KvJcZanKjTmr6kMcf3BM-REUxFSC4dtQfD_XFRRfQgAF5acp8MdKnnmQm1oLKGiFDmFddYSJDlB7zFtcnn049y2LHs9kOjAlZxZYFuLy4Wn2k0ul0Lmnc92PUlSgdtR1UTSyDXeXPheyoEpi88XmFgudoUroJmb0xTCr2VwnAjQ4gJfobQ9oJF6rBLb95_KeNAhLldRzGzolrEnNt3R09UpWpk0bF5-j4kJkINpdAbPl12zqBqSR_LXU3v7OtyZzxgzNlxAO6FUaxQ0t5HvyRC4yHTY8pN7nQ-VIdi0bDUIIpyTVjguFUsMduK7PhGI2ZV7rcM_1M8Rscf7Hrj3ZaDsdtw6kNUERxRPTZmFS9o96bDzxFE97putWhkl5OTJvWdj6zoNNqtn-tDG3psuate1jElUuSNdmz3Ycyy0N-sNnEOP6cAb3HWmNZZtrwBnt6Itn-BcIF0a86HqdkqStiMAsfglArcQOypR8xacwMbW9JWsJZgjI3MalCP7O7XF1NKIfeADTUT_b4p9zav6n8duH0_4ni5RZ1k9GJ4FOX7IOqeeKiLbhZ7gnT5wZmK43HzdralR2UWUGvM60CuQPna-m-zd-_56grt7bGLXUo9q7ZwDZADFXAak4eEKtQ-65UQ5mwFf3XAY-XNfMN1jy0S_WZMzAPYfHWe9ba9cdDlZdUgzktvYDzIdGnrhbq9VKfkl9YKvPZqa_eKd-RArrUKN3OT5gAblb85IItyj7_YE4ybn70oEhMgv_NSfmOoeF6i2UpDcYTGUebXldK400lyHDTGZwmdq8pRQ4TBrWmrhpd9TW5KkhqGoKYU5aPihb0MQn5GbvTtKg7vYvltrE5xH0krmfn8efKgN-NJ1Ju9r8dCVdRFpALjAkxLEi-6bw4i7ODXhsSYIKGQm_3MM-jxyDou0PUYr67_WEbqw5UO30pktFo_W7pAtYFEGoUnmVt_fgBphcepUXC84W1qKJWqhX0b1asH0zVgi3zRjlucLsx0VCBZ5AzOTO8SdaYMnJo8KM1M5lNGQZ7eUNRw4Jd2tE="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -242,7 +244,7 @@ Three easy-to-miss pitfalls:
 ```json
 {
   "task_name": "browser_tests",
-  "message": "gAAAAABqpMqyKxNiImhC1CS2IY1JZA-tZbutIBZ_LH5zFgIp7s4_CFAnrpFYiixTNMMicuAI76BwW1sUw7_D42awN2_3HWgt2NV41RibmW4m1ZrQPpyQEOE3Dhy1qCxaczpyXtHJy3ug_LQrJtj_DlO6PY9aIYRJkv9F-dz7NgH1ErBpsMpYJ5hQ8QBF-KUxmWLF1m5YcYUP0_FlaX5i4hlTnSdO57ubgowUufL91amHOg8KxfqjZPiK6DA-mGdvSkId_V57RwFpWz0N--iv6YUUs4_qurXQy6SrHxIilo_ttR5pIniSYlFYQOo-lyPhBISGgVsDJX_Xltdk7IY8XCD5jORtidTK_TrK3GBO8ZbiCkKRrx0XkcOCMBJ2WK8ztF-PmIWFjUQnxzOe6RQBYH5A5UZInBYmKwjuSf_X9PWcm7kXg17l916nLFxW_MOUfWn5yxr_xybEBpyfNOLDK1QJvbGrXpJdpHoPkghIJGGLlwy3GK_uM7gI46tU8BRZSaeeyEP517AIUAHa_kKpcevOnc5fAxUvlWBCw4T9wgeHQfg67GdDHEpb3eJ5lXV6mfFs5OqkpBOgFGzsEEwi9UuS205ndVnU7Rff8T8RQ3-MBXrGUggbzu6mDFyXEw5DD2jed1Mx-J7tNjbnX4MPleUVGVIyFL_a5NnlQTHAnBOEQE2wlkVZb3kbjvHXQ6HL_2oVBcGVAsn7pSUWR3Lq2pKOggpHvgAEITkZOtCfAuFaEjS_iwe3XpXDVLTGksvDjaBJdU4DQJLWvjRHjIBzXRiKEatGkdo3l9vpQWVVlirnhXMQycO57JxCFYkOES7fy3HD2st_lPIrFSoG9BFy8AW5IjCBb7GzkIDqbw8jZ5Mqd40BL4zC9eiqfYauaxmwlQuE-m2DbHafNfKRg1gkNI_gXvDsym2C7vrRSawEJGiJCXMr_ZXXTaES9wYJ3vhBorH220AJ_c0P3_7cIXTd7MGe0vgzkrHrZ92vg5ju4nAkreNwIdcn0GBWZ9WSccR9hnicAkRQppJy1IaGF7ftEUxrThkIC-Q-VUj6v-tsrPQpbcRpKUYFNpA7v34CDqscFRLconcZOtLTdiiNqW2XXKgy5FsCCdvWxJg-qTW36CPhB_cQeI19ZpbaztuZCiOMISsRabTNl52MjF0bZF7HRJHsrYQTg9eJ-vMrvq88wEe6Mn_B1roCaPXs1IxDgWe8oNlTLkox8U0sOEgH5Fgvsi75DSV0ZE17dow7nMEMfz8bzmGOY3kojbmrM031p-b5vvrqm_tbNxN6UEwe3CanbZy7tyvYjadLB3O_kAEkthGZlCSqDpVoFMIEckkv4zTVyt2tntOTF5CWbfLdG5ZGAputEE1k_kfCiP8l6Lxa2rj7lNwVb_rUS-JGl3DVj46s25BIZga6DbVp4Xa-8QDR1qvn4Ii5haIuWKSS2cm8a56t49fy-neRoIdsIJGkjNicUTPXozqUPEqqPU6a-WUmU5E28m_MTrGf9hU8h6blOqYJzjcmBVnX44QTWIxpp2yGqa6TV-xTJfAWZtkuC1MVeCZ66HpdZUkUacWrxhEYRYQNmaZLA3NiQ1LxYRebaLLGKSDEKZUTrrQRjnd_R3JDMr0CZGAidrho8QlK4LX5M-8xeNPcDAzDOEfyZmXlPoibqm9i2TkaqBFoU4FjuK-6PG1L4q4imu_l2tQA2yLemuNHlaBy4lRcPZzHTTdKRPrMhBrShfzriKAFxGTdIm681n2KOG9JkTp45iwt5Gd_9eXxlw9C9txAz1zgeOFRkbvXyQqiCMATSLYeWvUQYueqmo9WpPuwl6HGQBAemGoQ8ZnYC4Ts8w0g04Vk865rkxqYq5yyS0mxvG6CRyDmFlmjSVQclqqnC0Ki8pyNfhzkmtoxZNUz9THKb2oUSN8Cmp7mqYcRaK02_xInnvaSzQF4YsyjmTzXEFrLH-mM6-NGYKjHWyYNyS397Oow7nsChVeqeBAsFNp0YYMcTNZ9XkZhoZLYhF3Y0p_OLIlLeYRqwOuJfhavuiNWYPqseXBNOakuzCZMl4KuDnvtm3XOa2g26qpSHmnR9AUtQFzUj3dtnVyyz5BgDv4GxFDZYdKAIkOl1oE5T7imCpn9fT8eRsdhgBGhcYUUjatme-fbwEbkJpn-CihMYWeC_9zxWvG4d7zA07f9xM4pbTiWhjrtMvWr-L74K_97Dz7z_DPogW2K0Y-4WhJETnSYbX4HaV0SokC9BiyXCkNcJUowC4JYVDd36NufAKKWboix3X6atG24aYrK6I3vHDqYCkqeHF--8j8KC1X7i1D5Ns1rIUegThm8I3V1h3aW1I0ddP7Fxv23Y0w-F2y1PEvUPXsuLnvgiG1W_rePE9ZqzUOTlhDhk7cfmE5crMXb4KbAi9ccii8VMtl7yn894gkwXTkbiZW7Osldsm787FeH_xVvnyBusnstEFAFGS6KrkicNFu9zmLOgfqa2d7cjr9mKZrgPyHNmYqmBYaHjMiLgdrd_AczmHsApt8RzhEbDg2PCouWeIpkZx-_xQRE9TTwc8BhlJp37ikaX4SMz3IGhBZvZGv6HlNucLstFa6XvrXyJxWakoLFKzbKCO5DEP-HEgk78CSCpZ4-o6aJjLg4bGv6-Fe45AzCrIjKHk2u4da7fuwrG9i2uLzaiG-nxmTzUEzPbrXwo78WDVPZqMsBU2VKSaUm4NoW1X5hmHO7jqlO61hJpHV0xA05BoPhDtXdAOD0OuaY18v5WdrNjcjx2CtBbEViUmkW3DMxWVqEiqIMTqNiKhrSiav8yPq6k-yr2vLj0bSOYrl2YpNOySOxDKlVE4GcQQEuigtmUb8FMsQv3MIWqpHw34FzeDaX3Lh1Hwysuw27yUbqISJvgWamnNXlRJNr_9q-cKK-eT79eboWQ3gr4bsnoohlKOWKxUBN0Klq7IzRneuwriSDUlNqg1FbDtVKK5C2wcKFqb7S1en_BMjPXVxDuKi1yhZuMFbVIhaeVYQaAV_8DAQ3IhBxY_Pn7kMgSBxZ7NFjD43igELzZdoM_-EorX3dw-X9TMcV-I1Wa0S8gJf4m_s6WdsTai-hPlUvPDX2s8VLsaB-RuXKL1z42Efese0OUWg-MDXunWJsLCGD-L6ZmjLMBIeNt24U1T928g9Hu0F5ZpeR51XW8HEnTTUsjolzoEz-uOvEj3Cwx1reod6RoTQ9qrbVcLEHXf0J9xME7SethNpkMb5SNbcjs4uss91kJ5WQmq0xRD6EGZI_0fN8Jl7Km2EyEc0E690sgts5F_r_LlWekC_oFGfudVovk2VTdCxnSoHN3YFPV0v78CfGB8xZwTKEQEuScr48sHgoOpD6zKmjWK6FYrKiCs6HysTqjlNIb3Dt4mTvmCw2zxt7qgOQhC48HU1Px0Vvmj0ka4U6AaL6W--M8uW_Riy8l3_MnkueG1nNU_nJ0dsibDpYQqTrEMQiTbxSD-4wwHfgp4eu9g_FcR4maoh_TA-LuoM9Lk7M53GCtpcLsTmxOMxKjiCSLqU-lIENEj2aI22KaPIoifYZqir1DwM442N4rWTPkY4oBqNbTzqbPvuw1xZOtjoIQVOKZAi3H_UZ1UioF89SLyK0RIHGao5VYXJDErGz1wGn1KAGEN0PQbai0cQ7ueunB4hZQXTA6rgC2cmgsz6pHcFpkq9PPuoxxcw2QYHASvkFfzr4Bg4="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -253,7 +255,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/interactions
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:44:54.133Z — send_message
@@ -261,7 +263,7 @@ Payload:
 ```json
 {
   "target": "interactions",
-  "message": "gAAAAABqpMq2_Viky7MU2qIeZRBNYQUG6j0Dj7oZDjB3a4nxC8C0y2APn26XiJlL3quCt1HAOjmKSLOP5tWfnAkWfZo4sO723ePiLi4L7rXwMqUBXqtiOtA8n3Njru-NU3CA-Ka0_IjGuR8wWxASPqMgWuwkMh9PbW0ka9o7C_CXPjd1pw6hl9H3vLzPl-IxkmpMPpFNaMgqKtRQaisucDveeQ3eYPWwTFaRZMZpex8r_yDHNYhxYIQkRFH5MhD_0JgE73KOSSJ1ldVNQEwzp0_MdzJL9wxtfM_4fryry_5kyv8zGvcxQj2WgE7jPYHlk2zP9YJxhCwWjKsZi93MYi1hHp-4hWRaWfm9qSPnjyHCssQXWLn21pHJgMLBeRc2UUdWtFPhTPrG8mOg8hnwx4sZbiyuwABQHDoHJNrv3jzD0S-9zXeGTBCLbZMRgk7g-IjstOlSdHfhfzYLx5MYvmDrswVs8d35KwXD_dsiJCTNMlIwpfXNGASscbTquNvagUzeQVGUlJIKcTXJ5yyEvAwg2Zc3mOzV4QSQEYslEeF0vaUIgv2xsgk="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -270,7 +272,7 @@ Payload:
 ```json
 {
   "target": "rubric_check",
-  "message": "gAAAAABqpMrOUNOJiocBb9qBnEIJrFdWygcyBnjpphVqwWois3ByPLG_V4HIEQTsFrpCrs-428VQUavBlkvCD0yVWYoaLN4y1oPzl8yCOGreAWIDH4WzZxlyKt9i1HW_vUefbXfLHcAXwF7d8ZHteRVDM54thxH3RsCwps8BJ-dsuklH-wQo-QHshyhE4u-Hd2hRtZ10DNjH-ddEpWtP1NVkAswRhApa5dnf5oTfZBIwc1c4ghAb3TuPPmf7WAPv138pxmNAGDmoQYqPmWR7Q0suVahxmI5YLmTNPl2bunGPS4BSbLZzrc-0iS8Bmd0Ic0X0KCs6yz6hU_KD8hYf9maprR5xnmRqVYZHfEhcr_CNw1ZfryAKSvEmx8I_yHP6O9oN9OLyfrh2dimuYN3IZjJTIwv9WR7Y_6yLp5IOYw_ugINP125zA2KFW86uFnQB5vtw-gQ3wjDwnUXhskSXVQhuyv9h1OHCXl2IyZ_FaPuU_pRi658aOKO5g-DAuNJdXKAu73NwlIWyCXdykEInTldMt6_opZqmuc8XU1vLT3cOBtkQkRcgeT-T3mke8iDFn0L73gxgVRrJ99kX_a2BhD9_geMAUAerWcDLJJ6rsg3vkORby_6hifapV4wHk6g3lMl4a3eDpWVXNCeQtdHbqyh12b9TVNqxeQMhO1wgeTxULtlfE3gGHgWMJilej7LmP99-s6FKKvKrMq0rHzSP15aoEQkKX_NJLRToYnu2y-aJ0L0C6qv_uJwSRrmGVPqsgCeSXfkm7nxTdqFnURnWOgzoyfkw04er7iOyz0YTUld3IkWXvdz7wDUM2lmQisFOeSKQCAjVwpd2P5jf6gMzvkLg3LQ1mypU1bYcgCUywDFo5yn4mMdd7HpqE21W1gpzzKSBcImQ1veddgETzurz0VIrvb0-7f5vxAdryEcbWXRxUGoErINCl_tVBaGOnl-5VHS9_TudlkDOz7sGtT6ShzbzkEmm903MOhk3aXB1LySRrvdb8oCEqIP8dSnt29MPJz1W25ghWTFOPAzbAr_pG-izJBxkDjb71umHhw99qN3yP0mgifLSDcLuQZnk3EPdNPpJli58QQ15yMViIrXZGB_ZgfAJ1wSlLeqq9a5c4wXdFXvwdh-4rXJrNgiTP7WbSYTiiY-x7Geu2XMWoDPNFYjloBNAH19GaxLD0h4Z4PsmAYHkVUp1MZEn1DTkgtgqV1e-coMvRNlJPIiWbf6mv2jmYN0LFKK6XByRH06zQUuaq8PBh78RU-_dk5qrqgUjc4_HCKB_N4onbOb92T5tT-eMyhb6aEBGDBk1x5XUu8nHkJvgkrDWEYtxDQZtMPb5bFzFF6BM1XsHzl6xA-VW8TTmuRL2hiN20C0hEL-6NgQU8_xA7uO7u7h3-T2O5dgqKQoZcxc5afQJ0sBpxaK6RQBBAgy5fBTJsEDQDu3bOzZ1eGboY4YrY2PmlYIusRjJ8yVgnf2F39EP4Fmd-4uNd9nz3R7aheLRFluxqnskJ58IL_yXkps0tw0w0jDC2DJC59ugMX_mzVyrn0WmxqUDKkss7wEg9YoGykslvPMQ7EkMFlpAQPxVV7HQGxWTW9D3xolR8NMKhFCEx4GknsrFOC6tFtxrC1J17-3BD8NopApppHd2YiUjOfRvxNySuHOzl4MpTNJbgIz48ZwvWQAAcoagJSHaRk_jIAragcftcNXWt39M1IphXM6W1IOcVdi1cLQy6NZTFoDJCfp_RZiCt2Tu2IPsY9W_miBIKeu7svYGcgVTOVvY5x6s9KUkw6V6HN4pplS3yzE32n5pO1j5NrPDaPZWcda14CfnB4dWJY4sjge39ORZd0xicjRU-0V4HUBtKnxJ7oi2BcA-SopSAdPM4PV_lGarNKxDL_w2LGOzidveR3fBodDXOjmi4Wf9fl3QzT-rTSrW-Vu71L_5IWaWYOjQ9YFpl68LwwQQY-VJtEofP0hqOQlgrN1YbwAi88_gRRbFBICVhm3UWCItzWPj2K-r0vol3G9eBSYsfA8ofCKBaRyNlmUtBbfFTPfLj_MnFZZoYBDuEUJDypTRUczsHm-mDxnY2r5JihKMpK1fqCku5FSKf1s="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -281,7 +283,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:48:14.620Z — delivered agent message (/root/rubric_check → /root)
@@ -291,7 +293,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/rubric_check
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:48:14.620Z — delivered agent message (/root/interactions → /root)
@@ -301,7 +303,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/interactions
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:48:14.620Z — delivered agent message (/root/interactions → /root)
@@ -351,7 +353,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:49:07.349Z — delivered agent message (/root/browser_tests → /root)
@@ -361,7 +363,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:50:44.248Z — followup_task
@@ -369,7 +371,7 @@ Payload:
 ```json
 {
   "target": "rubric_check",
-  "message": "gAAAAABqpMwUvVCXdS_yIARpdRhLzOadnFIntP1oNLzmY1t5xFcqdWgthYNkig9BmohNKU-x6QFI9RtPiOHpB9_9AfM16vr-axaSXaeXEoxCjFpwuDMA7eCeaYszJ97aW3l-LN4WHXS_wJieaDIEh7mDgxfkkmdFlHY28FguQw_PJiWgZh9PImkDj9IxCPYmYecfuG-ovq114QNtR5C8mYJeOR30ZkLwCzTT4SAOz9eXvKBM1EvwSNPQ3-hP3WezYrOlt6B3nk8199d-p0i6BwSZA9AZCX1bOBczv6lGbyRI0jAazognG-MfaZN3wjF_Bf7wJIkCDyZZYXxQLTfe1lRDvP-luivgHOWBufacQIPaiqqJRrw2HyAX-NPo_z1DCbv4ZwZgsRVxVs7PdtiPRdacGpA0S86owN-g2REy4_XJ__HJ7HOY7oCHr72jLMbYtW0MvMkV_xN7RL6X2x-Jx4RVjFaA0XIjoPr2Bx9V0i_dCeAVIaTQGjI62w5mKnKZjdAdMrvkDhIQIBmSeumHR10z0XXMFkCC2Xfwr9q7gwa7i71SE34UejuYsrhGH6dHfihuI8sDpS9nmEGw2IKqkX0oYlpJIGiYPBFX4DIP_1EOtCP2aZ6-Zoo6cQVYcGXczxZMT3FColrRiLldRav_beqzTJlN6i8sHGw-rhM801yL2fTV4H7Imb7lW6NrJXaRrdr44E6HpD_3X1ccHjypfzjPQJtkqz5y_Rapftn_CDxqzF44bLp9q1mCMCA5h08fNVIFTnCSxwnybSvyly2sg_KK2sR9RadILWnyliLDTZTOLT2FdQqP7OZ2AV0L3odAJI3N8Fp4k8iBNkg24SyMUGZFpH1Qw52Hk8WaQSwOvpyLdzFrr_pQRnbTNScqW5lhf-E3UnPmnLfeZoE7ug5VqIig80FBWffNFtqooRu9s57PT4PFVkmNwsIIaPbdu0kPJKKXfCIfMJEie5CjS4g0ukr9MJ0xuNkbJLgIbNu6TZfRXlD9QCgttqXpUOAEdzj1dTH1VptonoyQv55KgHTVkX9UdOG8dimwGZvA-gDL41FKQvw2doVzftbW2Io3s8HrVppG4tI33BMasChKRQUx0_JPTvvY4OQEVo74GeIABByFef75FPUR5an0sM7yzKoV2ou5nHK01Y1-5Gqh8DyBtH6uQdDS-Xjz1LivzPD-sn59lb1FWUMALaSl4EEUO8BBqDbou6KmTsm-vg0PvpUVmMDa70RJJNscjf3lJ6Bj1cG2zeK8jitM6UCpBLU13KBmd6CQ5OkRb6m_Bd_UmByORKFjL9LbDiqsCUdYMls3UolT2BKb2nBZejouKQQZwrBwmmZ8Rjefda069DMURN7Aax8dp83EhOd6XsSNxxAOYuWWYcEJ4XstjYb5dE3I_zyCky8_QgCEgaurYGX6xtJFTpj_twhtNOqfJ_dY-Vfi2O1I8K2cv9U73REb7tEQkqIzVTfg_WrNdc5cf76C3aq8pPnP0f7bCkltYkxMOtOfx_7n3ohT9Ebohou_xjgtGC9EM40kcJMIZxZIBhfCSX84cmcluEsmBvYu1UFhK3qcmYeEA5wZOMujCy4lkAyv6Xs0yCW5M1Ven8yYDUepJDSG37p6bNp3C38kJDuPk1bn-1XHH-Og7YaZUpi7DXFLN-Q7IpF9UoPQZ-gZBQ7zJ03BtiePMuDjB0QJLCTtI8rhmgXWRtTQaQivYHXtfL1xXt2I3UyivWWxh6bl28tWUhVFtdHgG8FjD2Af-83OcPP4Vj5NtjelzDPtB30="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -378,7 +380,7 @@ Payload:
 ```json
 {
   "target": "interactions",
-  "message": "gAAAAABqpMwcWanh6Lut1vPINk7qcd1aS2I0T7nRpWF_KlPHYJkUqtF_E2nQ9-iUL2Z4KQ3jtmp6H9eIS4-WwSdgedp_JQsMfqRKAxDj9_Ht0RcjGsO4RU49m6y42Jor-SNnnEO0_gkheOdBaWOrjE20pBK2ENdiyfQBDmNuizNKZmgCouEOMIJH9IDr_3PSpB1gerhxVfE8BiuxC33VTkpwfcfMJrXMbe3g5FcnkVMOzQFxZeD6AYl257bE2C3qTTXXAm2ctHvlqt0exICw3EX9IQMsoJ3DX_xfTaYg7QHi2KxpR7aaKrH6iMqSXDEJSSu5HztqiyDXWUZXaYfJWdbcDASNRX9X3obNay5Az9DY_DYyPdgYiL1OqbTIhFKG-S2CxtodgYHfksaev5R-gCxyKX4DKdqzMgNj9VWkzk3nPTHrH5btIMB2u1YFQscVk0FDzPrOb9yZQjDp9h7RgHMpwoYjYK-OJC_Ui1DwLklYDvOdfguRuebnpRKuGg2LTHT3CCZXHEme0FGx3yImzlwHsOMTgXiFTZxcNvCtq_yxSu6PpK-BYoLH3c6AYnMhVcDqMZnayHS6HEBAsyVMxhoQrydeZflYC7jcePec-Cf8rqddll7W5zRugvi9ZKrS8raq3rmGW3zAeZ0-d2wRppr2kUQahMzMjwWG1EXt_e3zRViyD1pj4xvPI2tJO2OgT2rcdK5hbxomUj_A7l7M5w01j2Hq9NM94YLpFCSTdwAxqTmol2TfWeEkUlyuCGXcUpkDH6QuBze_dEYnzSWe4wPC_lCJLHc-ci4iYwsAuHmgWWS9mNSs3MXx422i6qda0oD-LWTv7ZbKYqE6URR4nJVU6eVv5n7wD1KQ3UrIf4HkEzOp8KPnYnZGMz0N5BeT0ncztmONclrxXnWKEQr-_XeW-QYG9KBmycxUvPC47WDiSKyMrYb_WHwVVCDAvuDYk7Gk2lFwU8b993MTG7LFpr_LxGQwnkNCgSxSjai9FRcGJWMThJobAkYr1Z14VzbUMlNkjGHuPCdsIDXt-PnhhV3PFu5WxBdNXWOktqu3ADScAzIq9aJVq7600SfB00U3U8HsdD1ogvC0K6xB5rRpgJnw8Nf_q-8tcU5e_24BEzK6N2De2q0fHMXzDfeIKjZFW5_tDQBFyodjRNacZXa0W_M3t3GhxhR1bfJlFH-cvtcfY3LRy0r47sfNz_Df4frDqWFBrnI3LcKEuUjoEnNp4vqy7UNOts7ieuguEvzteGghoPNzUWnaJDRfB90m_-u8PxAEqa_KAAoxdjPReToJ-ed39eM92-qMztYuRpE8iM0cO-8DvO1klzlQ1TsVhptUlnMM1XVJQJ6W1Rd7HephqAtLn4bvD4gBpaRpfw1cBVor0vrdzIip-lflxBFS837I42I0wppafkm_YjXv27eIjaw2lkJ218aG5ybNIqOjWhR2J6taF6cYGC0KIrLgUAaTvvVPV9rWX5Z9"
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -389,7 +391,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/rubric_check
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:53:33.312Z — delivered agent message (/root/browser_tests → /root)
@@ -413,7 +415,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/interactions
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:53:33.313Z — delivered agent message (/root/interactions → /root)
@@ -435,7 +437,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/rubric_check
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:54:13.968Z — followup_task
@@ -443,7 +445,7 @@ Payload:
 ```json
 {
   "target": "interactions",
-  "message": "gAAAAABqpMzlmi8itg_OoFAYW9i-ZSpDcWRnSRbfqQZ4I2-S8xaVcf6UzY2csS4smI88MIz26rPgK0LvQxI3l3fau8ICQ0w3bUqBgS4MZSLjxW05riPypN2-Xk6NPGQNJUiQLs_V6oBbp70S70QuOROpxpT3NbOnIUH24TYJMmnx0rbzO_Eqc2FD2GJfFUt9UCbFzSyBO5kz9x3DeUDMuAyny0fuEGFA43mN6bkhEx8TWLB65IE4K_MHQ37n-dIAaMHGKWVjndpis50wd_yXbz_4_Ief_GfBVN4UsXDz3NINjWFnlbJczDlSF27bA2eo9Vrtzm3RI5twDzc2XLIxsmcKB6BxUkV7U2yGeYjzz_T-nQgV7riv1yzcXuzS_d7MvRXe_5lgCsaU07KldGpQZwyUAGKFEdMjjFprcnLGZ1ab8YHAaJ86Ff6fViN8ViKGTKGIMs0KLNUhVK83qKm1N6lF5Eb6Tc2giGCuScDGBrwlXk06JCZ3yn0PxEoJH6Ggi8bA-nbVE0O4nzziSEn5I3b9IqkqXX5SU_VZE4wqIViSyk6q_Xy9MapeU9hMUpKEtyX5_A9Df2sl"
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -454,7 +456,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/interactions
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:55:02.309Z — delivered agent message (/root/rubric_check → /root)
@@ -481,7 +483,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/interactions
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:55:07.892Z — delivered agent message (/root/interactions → /root)
@@ -503,7 +505,7 @@ Used installed Sass’s `renderSync` API because this version lacks `compile`. O
 ```json
 {
   "target": "browser_tests",
-  "message": "gAAAAABqpM0kqB40htVNrInS4uzyaIQjfP7m6M9VQH8g78XFsge4o4JLtN9mgIVaOei_QqQZ6-fOpHMyI6wQWleQT7WgNuemOWAL3YbtkZTV4KwEnLR4LqnE9qcofdWXU7jeSk2bCZkua69UfBExwhEcPfSfc6Aynna6d_AbnWP8rh8JIR6XsBq2xYe2M7dXiKq8tYY_hH-Kh8bM6tsXfakV15KtKa468cTnkdyRlVtgmTkq0-xq3szKa0YIc8m-UYDuX_cGesyWZsF2uivloLuD4BeE9krSGVd6eCOcpD6kLSuwPHtRhJlgpzfiqh_DjE8GUDNOp-VI5RhoCv52yNbmtnvJ4PhBwsw_8IBtdb9Exq0tTLY5J0MHXpU15Zx2iL77zqG-OkexuZKRv1YDQ1HH1n9PT5AMPt6Ipj5pKh9GbKkY6AhPI0RBlNKKqgLoyKtoZ_RSwiTdrWYbdaIOSqGlZ0p-DIh3yqNLD8hhKTP5seIc0IygluR98CQil4xCvSCI5yFip3k6fgDNAHJ5RFYqJ4rCYCc6_wuyiAN7YYGrHwrxeIBHfr-6cmb_2eDFBlQtbGqITeIgpg_jgjrJw7aAPWPDMbt9cZWhP8m80AMuXym8P7gWCH3I7faWsT5ASgdPwlRzGORVLz644aVrMe-vQsfPze44SabwalPlpWiftfb95Yw5eTS6xqynbuOWnnQr50dSOIqxhKemou66Rj_vvGEUOiK7MtVPzqeC-oMr9uh3IHDNd_AZNmy7xi5amrVGBBolwRj8w4ntGvLXCQc6R5Z-FFKHMDcPHSKYxuKMMtfucr7sCaXBjl6a8NnLEJ6AgSaP9kBrnxa2b8wCoLY76Jc4e9Vdu78N-tJzhgFdAMDFB3glEwHMg7sQLbtfxZyNTmG2TduxcbTEYhyGszkHIbLZWOvGJ2OnBfklG3QvRpQuNJ4qgV4v_IU4_tBqXeEOGNZMFrWkNOZepDu9r7OQNTDsHRK2r021qZneF9et2AUW0ogG1rZ6gqk7oDrWZNXigRH9r1nODgEoUYV1EWEmU2qlKSryqibLS712CYc1epgGBOxew9hzqrq78N0CAoBPhdj9K9_TCiLYN3t1TietcB8lzuGKyS8orNIxWGnN-1MuFQUTgTBBDrKiqqHZbGeOUT3qgRuq2ASrDpUGZ_9a1MNjrEGVOBOXu0Z-Dyl6Eh0D3jEGlv7M-0BCFcIlGliDdY1m4Uain-JLztn0q2xp3Z03Ru8l_w=="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -512,7 +514,7 @@ Used installed Sass’s `renderSync` API because this version lacks `compile`. O
 ```json
 {
   "target": "rubric_check",
-  "message": "gAAAAABqpM0qJnRiVvyuRxaV_tmMZbHjBbVFUwW2G8drcTDqo73_UZFhPNUNItlt_umwiJOUNsg-O0Y5dHr8adkpJM-mdeJRk0cPZRQoBELpGo7B0YTksZOPeS7kGZNnFbXx7Ce7MSOLtq1mWtAjKgZm173y0wZSepXT4YOuCgaKiychW_10CnzJGFPy88ZV3UWpJho6j4J82q9cJ2a6fMRIDPDEaatvU0vJBV_soHfYxA0h9PLoPP0YgzoMVhCeb-x6-3PPyp59pBx9fhtRKRUOiwSywCAyKJUn49t2Qs2kkwl6ZjMJzf3sF7DTziRlJhwBvn7fdlKUTpab1caVA-XSPCvs7zbX1zdAXVGIIZAwxl8ps3HeAaD-ffGumQ6_kuAbvIAKNNRbqiNkK76tDAUGNmf6hE3fkBuJ6x3RgVk1PIu2_VZ91BuQl-IYmWNySGXijfYooivM8zr_zg017KdVJF3N3_pRom2wd_Lzgxd2KI0IadmLimdHgW9U7S20euQ-FPSXjLl0lY7l3HP3NxxYMAfnxxj9JL6BVsjn6UwPoBaI9L4sJG0UndXxB00mAyMGxKFwALBiqnrcmrhA7t1QE2qZFuhbaEH4WK99YIMfROBg5edctlT1ZaQ0Bq5KnXh83EnhKI1o91I3tx660u7bB9ICh54QQf4bXdEmn1Iu0HeTEcNQp_DvCc18sJaVae53fUZOu1pzShVsW2CEf-XS8vBOmA9lnezZSX5tH-V1v_MZAG82EsJNIHkcI-2MoPzmK_tm4rPh_LNgmERYPCowaROXkR3nSsTuXuLPDwyMYXkRbHFcECa36wTXGOX0skgodUciewnT27MkMtJiCz8nBXdVUyEFztjwUCHCcpVGAK1RQPQSJOA="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -523,7 +525,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:56:46.344Z — delivered agent message (/root/rubric_check → /root)
@@ -550,7 +552,7 @@ Photos are 63% smaller combined. Poster is the verified flower frame at one seco
 ```json
 {
   "target": "interactions",
-  "message": "gAAAAABqpM2HTXeLPJzml5BSfOmEpQ6DCqcfb3xQmYESpvMODczQO14DLqrwjcO9P_Qfb3dAvrXubmh_oiBcVHqwGpJ2enr079d25ywJOXgjLSiQo6sc7f3Q54-zeQlH94-GWvohCuXvSKPgRePkaXbEhyLggoul8lMSV9pZVN2pKe5bNSY5roj1w3CH30_O-n06njaZlgD0pfTwL0xLXVjI2tWMYznldlnKljsuAs5dHw9xoFY3w7kTHBhEbOdUUwwwbNNsDeOlniJQvzyfMZKvMHTnw11Cb9OWl7KaJkDfBJo6inAA0HtoonAcNiluursK_9C4Ko7jnTcpi6d9gfJwV06IMMDTmL13r_KLSpv8InWQneTg8srqSwDwlZpsGSSv7VgqjkHjfdtC2DzUH-_hSXUxhj1jSNTO8bAR88XnD-A9D56HqKTvvlyfySD0B8IQCSTFV3EmZalUdoR6ihfxrptBnW2tYXkMQPUtGWH7ZzEThHp4g5VPoUnR5a3Oc0gCs4hqh5vXalBEoBnux62TIE5WelwEq0IbhbCa7nGBaQ7X9OQlnvhkoP0yw7hSxqUaI7h5nawKh-a57KQyPQFAAJmTbVJuZgzVnQ0FNs_8CvnNyvZdF0tEPWMLBmaohyLhNM7l7_C2qNuz7RDF1g3gQy1yRLtPUEUFcEtzedDXJpLzmMo6BWea5gmd9wzGdUI5UgI1v8iq"
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -559,7 +561,7 @@ Photos are 63% smaller combined. Poster is the verified flower frame at one seco
 ```json
 {
   "target": "browser_tests",
-  "message": "gAAAAABqpM2Mm3An7aFzOZG7dwHmH24tJLbhyj6C9em_yHMnM-XWkze--ImJxaxH3N3HxFAxt0ZiM7373p7HrkmH88MySET9ZJ6XQ6KDdN-MqifPUH_abnPJ4xQ-GlBQONgUafsBaE-KCszFKNqXbT7HTzozySCYe1V18vKfT6fRHGA-YHCx8tjgzxEcuE7snMbiYl-DwPFg5cwpMsh5szZEN0btSocttgr4vm4_8BzJ-LSQEVY9D6xGoq0gR_3CjGnnpQASyZ202gdxcUC5mVgOiJVZjYe7PZWkZipMrJSmw_4n9z6g_wT_ZTOGrOHfqpr_rb7GnCwCgZD6bt2WOvGiEL2d1GQeu1p9QZT_5XE6-cvWjGpDVGaB58wjOyaj9fx7-B8wfc5qOzPOhwmeFoaRZC7IIKxI8gvp4l9fgDeGbDD0k5m00h0L3_E8lfdXt-BvyvhLBon_uYc_WNnwy6bVFE26M0kWt4Qe0WQ_CBB2w2qFPgdJHEQZKuPXRrfvUhQausY-Utfi-JJXUehug8V_k6BoNVCz_2-w0q43HHsCL22rFXALmFIEcmBBqaL6mcgtkkZlg5c6LFzJ6XY6Yj_R2BVGkJmdhg=="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -570,7 +572,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:57:25.900Z — delivered agent message (/root/interactions → /root)
@@ -580,7 +582,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/interactions
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:57:40.309Z — delivered agent message (/root/interactions → /root)
@@ -600,7 +602,7 @@ Only `main.js` changed; syntax check and formatting passed.
 ```json
 {
   "target": "browser_tests",
-  "message": "gAAAAABqpM3FlzRn_CDlRPDWn6mSAqKdQ7Gfh-iMAQrnAMGNd2Clb6eJuxZYyVCXSoz2xprxAVrBLgKU_OssTFeMpc4pYikrWZfH6thv-RX_lfNX-eQ-gr3n-jjw1r1XPjwSHzL678KVDQfRGDy5KLMfn28JsG19HLhFQKTbcza2p9R6lcdG8VXc_0Jr3yu6GtmUPEC4oI4ZqWd6OUOmN0IPZlKcLygM-YOyS13z0l-HfGu3znecMRpJN3bH5nIgYmyuTAW9InpwCu4VuQgNMB9PDZuowCLWH3b5zTYYyS7SpWa067N8ZH-odmhsewbT7pwIr2AhwtgFNdtKt56g8cp7IO35JtxTDDtL3dwrm_b1k75edFTAY_goHL-kV6Z3OQq-ICc0pDSDGJ0h_HPLlaREurLKYfLI9h6zDK8OOyPQuzQHCiNIfDzsYYXXJ4qxz8kCD35qPab6mp6S5gYCA6dG7KA5ZEf4E2tXkxFY9F4bg-jVnJNB8D7p5A5Xv98Y9d1ZokIj2_KvTIZvyz2LMusHxE8N8AdMkg=="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -611,7 +613,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T03:58:34.192Z — delivered agent message (/root/browser_tests → /root)
@@ -634,7 +636,7 @@ Verified strict hero centering before/after resizing, modal keyboard and scroll 
 ```json
 {
   "target": "browser_tests",
-  "message": "gAAAAABqpM4aKPE3L5tJ_qUOI5exNnT7VDd7NnhaJl3ObK-ICEqNG-FMF7lIKJ16t-TXSLYQ4N44wdH8oM316yCF52i_U41lAmmW6ki9kfw-7qMhU-N20ALeLttPH_AOwjUQW1jcZ1nVY2xKrnot262RYH2ED2OcGMZ2tdbR7eo8q_Ys12FyOA3J2pz7Fe9OEkEsaBfvxqnXjxmupf2em3yihx1byl90FLnYG8Nzc0z7E7MSuXWpL7DSJaAfWinvNn3nU2U_DlHOVmj7mn8AsjCPZ8ZwAsoq5RdZMlZYMFKe3GwE11Jdlq0MRlUfz8j7z6GyVZ-Vl5kRanQ35BQEzln-e1bGjXttIRVWB-phWt_8SWwJM-RTmVikRxdNDi6UN3pIXXTJp86xf1AwkRIdQeKA2LUk8WQ8L2z7l_aIjiLN09Y1zac7szZEJHuWNyhwVyx1A--qzsAsec8Kc1ZC_IQukINUeGNXtT-RfA0vDfzVYNu0q38S6aYDGeqzl60-IT2QB_5iMMyq9J7TE11BlM82IkNMWXx2L-D8U6fnBbkb1EgPkWzJ5YBJ6RcwiQn_TpQDTtsX_ef4wnrVIn1HxV4N4DBbDdIsisPWmC_T5Efbw0S8hWZSEX7ZiocZS0JktexEJ8IvpIE6QNxrFwh0ih9HtoNudoPSOdsAy2ify1P5tiDujkZtLvItPxQGGfP5v7TQRbED8xFN_NF1t0MylFWU3vX6H1OjMiXVA-LGrDCk57kYVnciLqfg6DOtDgak3zrS--qcLaBjx9k2LUvmAGfKJSUTqip1ECBmCB_Cfgh2hXMkOyFoxfLQpZfesYWVkuIvRdpPSmWF0tvt0YtvvxkIstDOKqvW9Q=="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -645,7 +647,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T04:00:27.501Z — send_message
@@ -653,7 +655,7 @@ Payload:
 ```json
 {
   "target": "browser_tests",
-  "message": "gAAAAABqpM5b3nwalFPLws0X08hPar1hYFb6DWALiXGp_xF8SxsMae3Q3M4jUoOrqzfCfDyQv53KddHe_AQ6kVduI9OscWMMkaPpB-A36V6xEiHN4Yj6YZ-4xciX-AalKinI8Iiye2e8blJSf6UR4F90s6FM6NIS_Ze4F5mv2E2jwy2XvSzWi4vTeGa79RZLDApohEYCapTznvXg1ovcpwKqRkv5SQqzxipceb8EHLVq9Ky95XNADKx2fxX0bGO9sMfHybIG5S2jMjqwEBei-80_fTdqOioiWlHQml7R97xcQJpmjoj8On1PJzzdXWWZiKO4wlqDDJM3V4Quykl_fV40fS0niGOg9vTpnNnVQYhmg331JXwpJmw="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -664,7 +666,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T04:01:14.125Z — delivered agent message (/root/browser_tests → /root)
@@ -684,7 +686,7 @@ Arrow/text overlap checks pass at all six viewport sizes. Full output saved to `
 ```json
 {
   "target": "rubric_check",
-  "message": "gAAAAABqpM-WYineCL_z9EH4PApqtrjYzzQJEM6lp_rtJYHuPs4rNLubEczYh0g9jgPt913subYQKQP3ut0-zqKNiaFVV_elDi0OzSm-1DQupxnQ270V0TAJ01cJJafy-iVWe8vpn4G0hF1O6hiSzAVcIK9Wz-oB7_6xRLZHCew2pc9fFVfyWTnaBJWWWFyWqi4e4sWXigbxagrGCRYs-Zs1udRVKidr9g0ziFT4nJrKQnV25XOujQZ3kE0pRYy3G6dZTwRTs8Pn-JFp1I7k2cIRZm-yzWB9qZ4S7iuCTBiSI33sZxUyKzCRhT9vWMSWFBeenD0Vaz0C_7SEdH0lH0DcXxyk9m38eWu2LvfPktsx9LfrIlFY1e51xx-VeSGmk-6uf5eHM817rv0ENges6-kqh0K-_Zj6jraroYG2kMlaLGAXDTzdvCeqDMIO7_njeLitc0TPyaYqTvyVzB6xCti_64xFA82XGsS9Ruq40LIPqwVZUf42x_ScHXdXgcVK1W6Tt-0HTN59w97et2WuCWuIy2e7HA5ts6MyD8lBLoYZByKFt-F8_AjMcwFu-9TUieDi_rhyUDY8C31XJBjXnsqSo8CJJ9u1KP1YTjBDuO3Qb3TdBtHaL9o-gcpMC17nQ4zirjc6DaZRy3EDzRdyII_SB6xp56GGFNWpOPR7AovuKYtLWORhBZo24EXYX86lDWHKpdP5VBkp9VoTE53qndaNJlzbjeJ3M2BCHZOX3xLjMplJHpd4GdBcFgiytUDE_LzCPwwZZbHRn58GNsj3I7eXp6RE_Ru3dP-2iUmqMk-AkEMKx7EHQ6pOhuQgx44FHKwaoZYQ6LNQwcBaFhZDPK9hSda11nOT8qkDC2V2sE5JykQLPgfhgscWfxilLID4cdbMQGzYDwXRfbUc1kbuyXZAEOB8aGGyO5qVD8GHnBjWijOR528fWBVvPHTjIzdUrL6fcKwC1p9AOsJeS-6BWgXIuH0YOG2hP9kD9iB3aUqLCnDFkERZjCI_SQel2lAPX5q_TVy6nf9goWW_2r_DJ3I-WyvxkpzHKvVUZjA_rX_rxyfd3v_bNIKYp1iw9gzGPKYCn65WazTEFefxWi8pEqG_lAjrOcecqcpiG6pJ6sPGFlCp_21gvMHlvXDJ2Ol5fOV7OwNeRdugoOE5xx_aQWvK2cbTGPwVJwAUpz_SYZ6T0kNlFS4AdXO7Ae8PScyZ9wZ6Uqd863fGU1fWVGGDaOOBJ4JRWX486DiwLWToovCuDX3p-DXMVCnona7gJ-q_D9Zi9MIpyfeIG6DH2zPC0EIk_2BDF0bsM3bbtbgkXmZGvbUj-aq7RFxqpUTawobOBzyzP_u7_d5m"
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -693,7 +695,7 @@ Arrow/text overlap checks pass at all six viewport sizes. Full output saved to `
 ```json
 {
   "target": "browser_tests",
-  "message": "gAAAAABqpM-cGtMl44IO2bOx8t8WXgI96Mg1ukB-V0HyzKZJ_pTNuSpNE-FDXnRqqjgqOH_M-3FCMWnpcGStPAd9NG8_ZoyF5f2Fn5sX41prB58efVIXYp82OaoKSS4dovVhxxqcVC8nI02WNEdpb6KcSxjrK0rMWO9UFk37wxPlnF1Jk9KanyFcZ5btQ7paX7POImrIcY4yZ8a7Z5CkidQxF-qQD3kvvZK2SCAutAXpzj6hKxa_224FY9xBiewW_YdGRyVKgv3pqjQ1vswPSlHJqssD-c0Jxwkn3yqiIIQdrsDxdVmbon-8_j_5ibfhE1Y4oGEHaYQI5Y3S1NFC05UuftI3SHOqnoYWNxG43f2JhAi_E1rY6oxofCT-qIlSDOgF51pvUs_kPMckWT71z0eXGhmPibGWkP8_yMfugaE5qQAXLi3O3LebjrWhWQmHEapLxTFqFss6H_PwZzpQDgNeNz5py3AHBpxReoWQNF_d0zmVcGkhQ_-QGvnLUyWtRiS_7zQnzZUr_Gc3qJxCS3rPfnpauPp1lBtaVVF5NuBjQtzigPGsLMCyYCs-DHKwiaIcI3EBMT0zssNdgk84BPuwS0fuZsmPq-DXXlUTbFhvIYY0Qwy-T3o2UuXNNPD7YoXQ8FBrt-YXWlKEwiMXSjRZctdaPqiWk2vdOp8xYXUlLrx150fUcyk="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -704,7 +706,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T04:07:06.441Z — delivered agent message (/root/browser_tests → /root)
@@ -714,7 +716,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/browser_tests
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T04:07:18.384Z — delivered agent message (/root/browser_tests → /root)
@@ -740,7 +742,7 @@ Message Type: MESSAGE
 Task name: /root
 Sender: /root/rubric_check
 Payload:
-
+[Message text unavailable in the recorded visible-text fields.]
 ```
 
 ### 2026-09-12T04:09:05.654Z — delivered agent message (/root/rubric_check → /root)
@@ -769,7 +771,7 @@ The audit includes file:line evidence, all 16 grading categories totaling 100%, 
 ```json
 {
   "target": "interactions",
-  "message": "gAAAAABqpNEylEvG4arveww98ToenYkvDI_wTVCOVxCxhlFHo4Bw67cVIxaiTCKRhhTRRFMtd0Np7qQetVlybr7L7NgTlcOMdMg5vJndPHab3SmAOIjKposvjGRwl5hy1JtZNP_DmGbzjg2khgHmt-F1l1R6CI3-8ezMfjTd09ZBpEl0WxXzMYVEsz_Yk9GMtWuuRGdZYOGy55OYDwi-Cxj4lYWJuNbLyTR-LIVlD41QU3X30fR-5oCB_Mpp1P4Mt_Sl_gaOcfDG2yvDwstf47YZaDxqi5Bxv9FnYf8h3PNkqA8vkAGRbGPcoqJQKPXtdrL0luMUcnH0RG9SVPs9DYAauc-tv_SfdKHF7nbgfNg02idDHR6_qNo4Tytp6GdSzqjeD2ALcu3nJfJ-FtkjJgO02dMZ43pFMxcIUj4XQwQya1BcmM5wIpbBNo2W3XYccSA1Epnxaiv1_MMzvxa8aonOxNUpsiYDSonrnqFeDkYnL5AN0bpoh_w-UARkRSCIZKLLnT1wj4PjGEBSjqw76DgfE21AwcXlZ3YRwXhsoa62fFOE-scSVgOJIwWzJBxLS8cjt68O-L7J9zLNKAeMuMT76FuZYzcvrS2NY_yMncWCRSz1jfjsCuidad2Pnka6RrHDywj-8uampp7JJctc-NMUeaOMMieYpPAk_JJxp1JtI2ultqx1Al8o4VZulB1wdnEshrzs23QxwqdOFErfe2oyr5pK98eXjpXvFSRA95OCzqUR_edwsjoTVG4QjhM693cF9zbbMV5af_iIsVvxMRjOykVRos85iqoUB6rQKq6omyLx_OC1DnTU2-zHsvmdTXkKyrVlT2GL-CHDBYVJ6tEIIPmW4GoiwKg0wheRE5y_PaOGWXUP684p-l16J9tbaL4dX7dX4m0Oect4sDuGLbK8pP1ZoFATLRZs0bLZoN1WQ3Pj0V24DVywBosbeYKmY-JSsuVXdgKkMta9x7zscJVlkLE8it7dxTvnusMMEUFbBzdCbB1N5PN3XgZzQJxaOR2LfbIW4uCyjo_gsBro_cJm9f2rY7BrFuTGbVplPY3AmIQ8_Zd4FyBLuONlxenaa7JSssrRQVqbaO0tQltqGSJesisS9xIJ65vdUIYRTxYcRmHSVB4Ziew6B-85pdAkquDxdTleHSXhrUaLdoa5VXtvtNIgyOoKRVxCxXLQc_yNIhN1RA1Nt6ugBuAVyO3cYtRq8MZ25I8cCWzwJGGC1ddGnLCKDpDYZ0RTgqb-yWmUjq1Jb6UIQORqMvLAhjNYF3wraoZ69H8zZp3ej_Bhm8aLrnkqq5v2DC96Md1b-KTGW415bQroIiO_K_YNsL209SdEaQWXtE5bgpry2U_6MKpQUcge6TefMINYHSJoVZ-cWLauKzrKRe3W5C7OxqVnYEq0gmVB7DUC77WhNR3E5TzfCBbY_36JnIzdCbtfHAsFe8MX69QybeMGn4Iwf5GNL6_-G-WSHG_Sc3VyI_Gyq8INcP7VQcirZLIeRMSmPICxBHTHcyGAlNscvpHDssGPKF6kJ2_n3AOWo-ML4LE2Jeiq6zMJyva9__JVqz71hABVsqz2t4167KknUoJ6yAVb-sWrqACwLxDglJ8IDpA6I7_gZ9ETX9qYUJ-KVjmIoEdP2JuM7NRlQ2QW5CxwhtH-7OLW87P_7qmkBJi6RXIqyh8ARASOBsPxJ2T5h15y1QIbHtWAZEZ8_CKbG9-16E33fSeXRoebMsXY9v31UT_OUpkFQ0L7t6sd3TaEZoUbiLs3KhjYofHvPf3sd76WbS8JulP5l9UuavYIG3Z2_Hsh1IL1y3NnJ7NiloV9pxKa_QuOtduk6g6svE2nEN-AXppUosUibVo7QPfQp6DL7CX9Z64mhvC8cXPUvZJBHqCHWdDLfn7Qa8wg5yDOgTYmhq3DYtrH3J8sFtZ5TMUlFvVt1WUOMM96tKtF6KESfZHHo3geT-vjkEwyhp8x8l6KuBRqI-eab3TiOHiY44Firz1_4qcfwQZKZ9v8e3aW21kejhpavRiSLTaPxcPYYyAZgpgH3Rw_mFLVTQKdBken9tFVOcnOfcIJ12lw1ppM6tNyk5OHg8HgBCpNWRF2lAu03nuPAWvQ9k3-Rd4rwZUi5XnmbI8tVjn4_yBCAxkf1tFDWV39zeGN_k_TMnWA6MX9tL0Tu5xlUiMJLH9y1NnVm4Q3j2sSh6-Rc21rRiJrwJAC0HbkjLp3eLF4RdNM3j0NOTsCrC_xYYqFMPePXziP6Uyr7fJBkvimp3f-CFS_SPK3X68VniN23DIq7CKzUnrVf4wenMXdGSubLJ9yg_R6uNx2cwOeEiugH5d4MvJcsk2jLnkJ467h1yQtCtueRXWklU8t4cnUIZR6dFETzvTFjHzkXDVBla8OBtlGjKGjmNcKn3bsb-opxBIgoF0RBAbT85ALHsO9FsiDNMXXNQzmH1l9gNh9iKdnrLAF_WLZ-fLVpt0MxGrHxXmWzXJNp4U--6b0Z3gDJqSM9XRXBOPVFb2A_7rcrlxvvGRVLU0LcCDGrVXpLmWUV69l8tnQZPo2B7KYuDbIXXTZrFrcs6jBc-9KfZN_ymhgwGae1saQFL37SKJupniymXgvmGTQKJAiFwJjHFTCDjIZUDymwndO8pfWoRcESF-aj2sE3B2Qinkb5USg_pgI9mhaIyqay5GcIEuAXrCSe9rLGdzHWKJtY9O87mR9AhnSxM5RQxLOWq7kGNunFMILKBQP_29nDDUJhdZK3FTgEmQVCpHa5RX31euYyMvun9lkoh3KYWFkNX7qrSgjpvoAa1RqHWBoLHI-6lcxpyZ3SVRJTK59876oB9EqJcdB885PbV-dYgCpSU5bKowxIB2vaZ0z6g4="
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -778,7 +780,7 @@ The audit includes file:line evidence, all 16 grading categories totaling 100%, 
 ```json
 {
   "target": "interactions",
-  "message": "gAAAAABqpNHCges3z_rcgcwRYgFcxQZLNs2DNDYGF9IK1pS1s26oyiP2WBd9uiW-JTGMD7oT01N-R6pzj3biuO4M965v81MfOQHPYROjGcmfmodEAjtIJseIGN3qq8LmyPGxgjKHkBp_wMEnrcu8Wl9TWrJroKBtFR4rJMYuYyR1XWwndBAjogvJcmiR-Qw5WoXgdFdmmF6-LhZohoThR3iErNhXmMYNkkUT7-IGiuFVPFHaX0TdftIO1O9QLfwX30Osv5BkFKfENu8ycPyPcKSOxuXfgRrPOGjJS1PYBPFMXhoi2HDlq9c6yXHpWRxh9-TVfyBhY5-lKLFsF9EaXWveYHek89O1XGFXd5wZ8nX4eeA3NzpB17xzZk3pCXcXHqLkT8kobT4dOsqBFLGh_kfE0Ua4ros5Ar-RwaU2FyzxV9Fk64sgp0VI9wialI1QuFzPnF6ggJyB2J2wEPxTDWpjKhFWr6Fej5tABcDH-AdTTjdnR8BFrVqs2Nm8zSs7SIV7BSGCCxkM"
+  "message": "[Opaque internal payload omitted]"
 }
 ```
 
@@ -881,3 +883,6 @@ text(await tools.exec_command({cmd:"python3 - <<'PY'\nfrom pathlib import Path\n
 - `source_authoring_exec_calls`: 11
 - `user_messages`: 4
 - `user_reply_wrappers_presented_as_question_and_answer`: 1
+
+- `opaque_internal_payload_values_removed`: 20
+- `unavailable_delivered_message_payloads_marked`: 20
