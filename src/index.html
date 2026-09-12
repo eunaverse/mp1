@@ -1,13 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Field Notes: an imagined travel journal about open landscapes, small moments, and taking the long way."
+    />
+    <title>Field Notes — Take the long way</title>
+    <link rel="icon" href="assets/compass.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#journeys">Skip to the journal</a>
+    <header class="site-header" id="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="#home" data-scroll aria-label="Field Notes home"
+          ><span class="icon icon-compass" aria-hidden="true"></span>Field
+          Notes<span class="brand-dot">.</span></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#home" data-nav aria-current="location">Home</a>
+          <a href="#journeys" data-nav>Journeys</a>
+          <a href="#notes" data-nav>Field notes</a>
+          <a href="#film" data-nav>Slow moments</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="home" data-section aria-labelledby="home-title">
+        <img
+          class="hero-image"
+          src="assets/mountains.jpg"
+          alt="A quiet lake beneath layers of mountains in evening light"
+          fetchpriority="high"
+          width="1920"
+          height="1280"
+        />
+        <div class="hero-content container">
+          <p class="eyebrow">A journal for the wandering spirit</p>
+          <h1 id="home-title">Take the<br /><em>long way.</em></h1>
+          <p class="hero-description">
+            Less rushing. More looking around.<br />Little stories from the
+            places in between.
+          </p>
+          <a class="button" href="#journeys" data-scroll
+            >Explore the journal <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="hero-margin container" aria-hidden="true">
+          <span>OPEN ROADS. OPEN EYES.</span><span>SCROLL TO WANDER ↓</span>
+        </div>
+      </section>
+      <section
+        class="section journeys"
+        id="journeys"
+        data-section
+        aria-labelledby="journeys-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / Places to get lost in</p>
+              <h2 id="journeys-title">
+                Somewhere worth<br /><em>slowing down.</em>
+              </h2>
+            </div>
+            <p>
+              Follow the water. Find a quiet trail.<br />See where a little
+              curiosity takes you.
+            </p>
+          </div>
+          <div
+            class="carousel"
+            data-carousel
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Journey inspiration"
+            tabindex="0"
+          >
+            <div class="slides">
+              <article
+                class="slide"
+                data-slide
+                role="group"
+                aria-roledescription="slide"
+                aria-label="1 of 3"
+              >
+                <img
+                  src="assets/mountains.jpg"
+                  alt="Mountains rising beyond a peaceful lake"
+                  width="1920"
+                  height="1280"
+                  loading="lazy"
+                />
+                <div class="slide-copy">
+                  <p class="eyebrow">The mountains</p>
+                  <h3>Chasing<br />mountain light.</h3>
+                  <p>
+                    Cold air, still water, and a skyline that makes everything
+                    else feel small. An invitation to linger by the lake.
+                  </p>
+                  <a href="#notes" data-scroll class="text-link"
+                    >Find your slower pace <span aria-hidden="true">↗</span></a
+                  ><span class="slide-label"
+                    >A LITTLE ALTITUDE. A NEW PERSPECTIVE.</span
+                  >
+                </div>
+              </article>
+              <article
+                class="slide"
+                data-slide
+                role="group"
+                aria-roledescription="slide"
+                aria-label="2 of 3"
+                hidden
+              >
+                <img
+                  src="assets/coast.jpg"
+                  alt="Ocean waves meeting a rugged coast"
+                  width="1440"
+                  height="960"
+                  loading="lazy"
+                />
+                <div class="slide-copy">
+                  <p class="eyebrow">The coastline</p>
+                  <h3>Where land<br />meets sea.</h3>
+                  <p>
+                    Salt in the air and nowhere to hurry. Let the tide set the
+                    rhythm for an afternoon without an itinerary.
+                  </p>
+                  <a href="#notes" data-scroll class="text-link"
+                    >Leave room to wander <span aria-hidden="true">↗</span></a
+                  ><span class="slide-label"
+                    >FOLLOW THE SHORE. FORGET THE CLOCK.</span
+                  >
+                </div>
+              </article>
+              <article
+                class="slide"
+                data-slide
+                role="group"
+                aria-roledescription="slide"
+                aria-label="3 of 3"
+                hidden
+              >
+                <img
+                  src="assets/forest.jpg"
+                  alt="A trail winding through a green forest"
+                  width="1000"
+                  height="1250"
+                  loading="lazy"
+                />
+                <div class="slide-copy">
+                  <p class="eyebrow">The quiet trails</p>
+                  <h3>A little deeper<br />into the green.</h3>
+                  <p>
+                    A canopy overhead, soft earth underfoot. Sometimes the best
+                    part of a walk is stopping to listen.
+                  </p>
+                  <a href="#film" data-scroll class="text-link"
+                    >Notice the small things
+                    <span aria-hidden="true">↗</span></a
+                  ><span class="slide-label"
+                    >LESS NOISE. A LITTLE MORE WONDER.</span
+                  >
+                </div>
+              </article>
+            </div>
+            <button
+              class="carousel-arrow previous"
+              data-carousel-prev
+              aria-label="Previous journey"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <button
+              class="carousel-arrow next"
+              data-carousel-next
+              aria-label="Next journey"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+            <div class="carousel-footer">
+              <p data-carousel-status aria-live="polite" aria-atomic="true">
+                01 / 03
+              </p>
+              <div class="carousel-dots" aria-label="Choose a journey">
+                <button
+                  data-slide-to="0"
+                  aria-label="Show journey 1"
+                  aria-pressed="true"
+                ></button
+                ><button
+                  data-slide-to="1"
+                  aria-label="Show journey 2"
+                  aria-pressed="false"
+                ></button
+                ><button
+                  data-slide-to="2"
+                  aria-label="Show journey 3"
+                  aria-pressed="false"
+                ></button>
+              </div>
+              <span class="carousel-hint">THREE WAYS TO WANDER</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section notes"
+        id="notes"
+        data-section
+        aria-labelledby="notes-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / Notes from the road</p>
+              <h2 id="notes-title">Carry less.<br /><em>Notice more.</em></h2>
+            </div>
+            <p>
+              A few things to take with you.<br />None of them need much room.
+            </p>
+          </div>
+          <div class="notes-grid">
+            <article class="note-card">
+              <span class="note-number">01</span
+              ><span class="icon icon-route" aria-hidden="true"></span>
+              <h3>Leave a little<br />room for serendipity.</h3>
+              <p>
+                One less stop on the itinerary. One more chance to find
+                something unexpected.
+              </p>
+              <button class="text-link" data-open-note="slow">
+                On traveling slowly <span aria-hidden="true">↗</span>
+              </button>
+            </article>
+            <article class="note-card">
+              <span class="note-number">02</span
+              ><span class="icon icon-bag" aria-hidden="true"></span>
+              <h3>Pack light.<br />Bring your curiosity.</h3>
+              <p>
+                Make space for what matters: a notebook, a favorite layer, and a
+                little possibility.
+              </p>
+              <button class="text-link" data-open-note="pack">
+                A lighter kind of luggage <span aria-hidden="true">↗</span>
+              </button>
+            </article>
+            <article class="note-card">
+              <span class="note-number">03</span
+              ><span class="icon icon-sun" aria-hidden="true"></span>
+              <h3>The small things<br />are the big things.</h3>
+              <p>
+                The shifting light. A leaf in the wind. You don’t have to go far
+                to see something new.
+              </p>
+              <button class="text-link" data-open-note="notice">
+                Practice paying attention <span aria-hidden="true">↗</span>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+      <aside class="pause-section" aria-label="A reminder to slow down">
+        <div class="container">
+          <p class="eyebrow">A small reminder</p>
+          <p class="pause-quote">
+            You don’t need to go far<br />to feel <em>a world away.</em>
+          </p>
+          <a class="light-link" href="#film" data-scroll
+            >Stay a little longer <span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </aside>
+      <section
+        class="section film"
+        id="film"
+        data-section
+        aria-labelledby="film-title"
+      >
+        <div class="container film-grid">
+          <div class="film-copy">
+            <p class="eyebrow">03 / A moment, held still</p>
+            <h2 id="film-title">Nothing to do.<br /><em>Just be here.</em></h2>
+            <p>
+              A breeze through the flowers. A few seconds with no destination.
+              Press play, take a breath, and let the small things fill the
+              frame.
+            </p>
+            <span class="film-caption">A QUIET STUDY OF FLOWERS IN MOTION</span>
+          </div>
+          <figure>
+            <video
+              poster="assets/flower-poster.jpg"
+              controls
+              muted
+              playsinline
+              preload="metadata"
+              width="960"
+              height="540"
+              aria-label="Flowers moving in a gentle breeze"
+            >
+              <source src="assets/flower.mp4" type="video/mp4" />
+              <track
+                kind="captions"
+                src="assets/flower.vtt"
+                srclang="en"
+                label="English"
+                default
+              />
+              Your browser does not support video.
+              <a href="assets/flower.mp4">Download the nature film</a>.
+            </video>
+            <figcaption>
+              Pause for the details. <span>Nature clip · MDN / CC0</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div>
+          <a class="brand" href="#home" data-scroll
+            ><span class="icon icon-compass" aria-hidden="true"></span>Field
+            Notes.</a
+          >
+          <p>
+            An imagined journal.<br />A little inspiration to take the long way.
+          </p>
+        </div>
+        <div class="footer-end">
+          <p>KEEP YOUR CURIOSITY CLOSE.</p>
+          <div class="social-links" aria-label="Social websites">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Instagram (opens in a new tab)"
+              ><span class="icon icon-instagram" aria-hidden="true"></span></a
+            ><a
+              href="https://www.pinterest.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Pinterest (opens in a new tab)"
+              ><span class="icon icon-pinterest" aria-hidden="true"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Made for the love of looking around.</span
+        ><span
+          >Photography via <a href="https://unsplash.com/">Unsplash</a> · Film
+          via
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video"
+            >MDN</a
+          ></span
+        ><a href="#home" data-scroll>Back to top ↑</a>
+      </div>
+    </footer>
+    <dialog
+      id="note-dialog"
+      aria-labelledby="note-title"
+      aria-describedby="note-body"
+    >
+      <button class="dialog-close" data-close-note aria-label="Close note">
+        ×
+      </button>
+      <p class="eyebrow">A page from the journal</p>
+      <h2 id="note-title"></h2>
+      <p id="note-body"></p>
+      <div id="note-extra"></div>
+      <span class="dialog-signature">Keep wandering, Field Notes.</span>
+    </dialog>
+  </body>
 </html>

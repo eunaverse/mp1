@@ -1,1 +1,861 @@
-/* Your SCSS here. */
+// 1. Shared colors, spacing, and reusable layouts.
+$paper: #f7f5ee;
+$ink: #243c33;
+$muted: #68726a;
+$accent: #ad512e;
+$line: #dcded3;
+$serif: Georgia, "Times New Roman", serif;
+
+@mixin centered-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin section-space {
+  padding-block: clamp(64px, 7vw, 108px);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: 96px;
+}
+body {
+  margin: 0;
+  color: $ink;
+  background: $paper;
+  font: 16px/1.65 Arial, Helvetica, sans-serif;
+}
+body.modal-open {
+  overflow: hidden;
+}
+[hidden] {
+  display: none !important;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible,
+a:focus-visible,
+video:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid $accent;
+  outline-offset: 5px;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: $serif;
+  font-weight: 400;
+  line-height: 1.08;
+}
+h2 {
+  font-size: clamp(38px, 4.2vw, 58px);
+  letter-spacing: -1.6px;
+}
+em {
+  font-weight: 400;
+}
+.container {
+  width: min(1248px, calc(100% - 112px));
+  margin-inline: auto;
+}
+.section {
+  @include section-space;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section-heading {
+  @include centered-row;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 46px;
+}
+.section-heading > p {
+  color: $muted;
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 8px;
+  left: 8px;
+  padding: 10px 18px;
+  background: white;
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+// 2. Sticky navigation. Size changes immediately so JS can measure the offset.
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: $paper;
+  transition: box-shadow 0.2s ease;
+}
+.header-inner {
+  @include centered-row;
+  min-height: 96px;
+  gap: 36px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+  font: 700 30px/1 $serif;
+  letter-spacing: -1.5px;
+}
+.brand-dot {
+  color: $accent;
+  margin-left: -10px;
+}
+.brand .icon {
+  width: 32px;
+  height: 32px;
+}
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+.site-header nav a {
+  position: relative;
+  padding-block: 12px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.site-header nav a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 3px;
+  inset-inline: 0;
+  background: $accent;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.site-header nav a:hover::after,
+.site-header nav a[aria-current]::after {
+  transform: scaleX(1);
+}
+.site-header nav a[aria-current] {
+  color: $accent;
+}
+.site-header.is-compact {
+  box-shadow: 0 2px 18px #243c3310;
+}
+.site-header.is-compact .header-inner {
+  min-height: 72px;
+}
+.site-header.is-compact .brand {
+  font-size: 26px;
+}
+.site-header.is-compact nav a {
+  font-size: 13px;
+}
+
+// 3. A full-width hero, centered on both axes as its height changes.
+.hero {
+  min-height: 570px;
+  height: min(780px, calc(100svh - 96px));
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  isolation: isolate;
+}
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 53%;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #1225233b, #1225236b 50%, #12252380);
+  z-index: -1;
+}
+.hero-content {
+  padding-block: 68px;
+  animation: arrive 0.8s ease both;
+}
+.hero .eyebrow {
+  margin-bottom: 24px;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+.hero h1 {
+  font-size: clamp(72px, 7.8vw, 116px);
+  letter-spacing: -4px;
+  line-height: 0.96;
+}
+.hero-description {
+  margin-block: 25px 30px;
+  font-size: 15px;
+  color: #fffef5;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 34px;
+  padding: 13px 22px;
+  background: $paper;
+  color: $ink;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+.button:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+.button span {
+  font-size: 22px;
+  line-height: 1;
+}
+.hero-margin {
+  position: absolute;
+  bottom: 28px;
+  @include centered-row;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+// 4. Three-slide carousel. Hidden slides take no space and cannot receive focus.
+.carousel {
+  position: relative;
+}
+.slide {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  min-height: 440px;
+  background: #eeeee5;
+  animation: arrive 0.35s ease both;
+}
+.slide > img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+}
+.slide-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 45px 65px;
+}
+.slide-copy .eyebrow {
+  color: $accent;
+  font-size: 10px;
+}
+.slide h3 {
+  font-size: clamp(32px, 3.2vw, 46px);
+  letter-spacing: -1.3px;
+  margin-bottom: 24px;
+}
+.slide-copy > p:not(.eyebrow) {
+  font-size: 14px;
+  color: #58645b;
+  max-width: 32ch;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 0;
+  border-bottom: 1px solid $ink;
+  padding: 11px 0;
+  background: transparent;
+  transition: color 0.2s;
+}
+.text-link:hover {
+  color: $accent;
+}
+.slide .text-link {
+  align-self: flex-start;
+  margin-top: 22px;
+}
+.slide-label {
+  margin-top: 36px;
+  color: $muted;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+}
+.carousel-arrow {
+  position: absolute;
+  top: calc(50% - 53px);
+  border: 0;
+  background: $paper;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  transition: background 0.2s, color 0.2s;
+}
+.carousel-arrow:hover {
+  background: $ink;
+  color: white;
+}
+.previous {
+  left: 16px;
+}
+.next {
+  right: 16px;
+}
+.carousel-footer {
+  @include centered-row;
+  min-height: 66px;
+  font-size: 11px;
+  border-bottom: 1px solid $line;
+}
+.carousel-footer > p {
+  min-width: 140px;
+  letter-spacing: 2px;
+}
+.carousel-dots {
+  display: flex;
+}
+.carousel-dots button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  padding: 0;
+  height: 44px;
+  width: 30px;
+  background: transparent;
+}
+.carousel-dots button::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b8bcb1;
+}
+.carousel-dots button[aria-pressed="true"]::before {
+  width: 20px;
+  border-radius: 8px;
+  background: $ink;
+}
+.carousel-hint {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+// 5. Three columns and a fixed background stripe.
+.notes {
+  padding-top: 20px;
+}
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid $line;
+}
+.note-card {
+  position: relative;
+  padding: 34px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.note-card:first-child {
+  padding-left: 0;
+}
+.note-card:last-child {
+  padding-right: 0;
+}
+.note-card + .note-card {
+  border-left: 1px solid $line;
+}
+.note-number {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  font: italic 16px $serif;
+  color: $muted;
+}
+.note-card .icon {
+  width: 32px;
+  height: 32px;
+  color: $accent;
+  margin-bottom: 30px;
+}
+.note-card h3 {
+  font-size: clamp(23px, 2.3vw, 31px);
+  line-height: 1.17;
+  margin-bottom: 18px;
+}
+.note-card > p {
+  color: $muted;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+.note-card .text-link {
+  margin-top: auto;
+  text-align: left;
+}
+.pause-section {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-block: 72px;
+  color: white;
+  background: linear-gradient(#142c2990, #142c2990),
+    url("../assets/coast.jpg") center / cover fixed;
+}
+.pause-quote {
+  font: 400 clamp(36px, 4.5vw, 64px) / 1.2 $serif;
+  letter-spacing: -1.4px;
+  margin: 10px 0 28px;
+}
+.light-link {
+  font-size: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ffffff70;
+}
+.light-link span {
+  margin-left: 24px;
+}
+
+// 6. Native video, footer, and accessible modal.
+.film-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 70px;
+}
+.film-copy > p:not(.eyebrow) {
+  font-size: 14px;
+  color: $muted;
+  margin-top: 24px;
+  max-width: 36ch;
+}
+.film-caption {
+  display: block;
+  margin-top: 28px;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  background: $ink;
+}
+figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  font-size: 10px;
+  color: $muted;
+}
+.site-footer {
+  background: $ink;
+  color: $paper;
+  padding-block: 52px 22px;
+}
+.footer-top {
+  @include centered-row;
+  padding-bottom: 40px;
+}
+.footer-top .brand {
+  font-size: 28px;
+}
+.footer-top p {
+  font-size: 12px;
+  color: #d6dfd0;
+  margin-top: 18px;
+}
+.footer-end {
+  text-align: right;
+}
+.footer-end p {
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+.social-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 15px;
+}
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ffffff40;
+  transition: background 0.2s;
+}
+.social-links a:hover {
+  background: #ffffff20;
+}
+.footer-bottom {
+  @include centered-row;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 9px;
+  color: #d6dfd0;
+  border-top: 1px solid #ffffff25;
+  padding-top: 20px;
+}
+.footer-bottom a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#note-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(560px, calc(100% - 40px));
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+  border: 0;
+  padding: 54px 44px 38px;
+  background: $paper;
+  color: $ink;
+  box-shadow: 0 28px 90px #0003;
+}
+#note-dialog[open] {
+  animation: arrive 0.2s ease both;
+}
+#note-dialog::backdrop {
+  background: #10251dd0;
+  backdrop-filter: blur(4px);
+}
+#note-dialog h2 {
+  font-size: 38px;
+  margin-bottom: 24px;
+}
+#note-dialog #note-body,
+#note-extra {
+  font-size: 15px;
+  color: #58645b;
+}
+#note-extra {
+  margin-top: 20px;
+}
+#note-extra ul {
+  padding-left: 20px;
+}
+#note-extra li + li {
+  margin-top: 10px;
+}
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 0;
+  background: none;
+  width: 44px;
+  height: 44px;
+  font-size: 28px;
+}
+.dialog-signature {
+  display: block;
+  margin-top: 28px;
+  font: italic 20px $serif;
+}
+
+// Original SVG silhouettes appear through CSS masks, not a runtime icon library.
+.icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+}
+@each $name in compass, route, bag, sun, instagram, pinterest {
+  .icon-#{$name} {
+    --icon: url("../assets/#{$name}.svg");
+  }
+}
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// All rubric sizes retain three columns; small phones use a single column.
+@media (max-width: 1050px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .site-header nav {
+    gap: 24px;
+  }
+  .slide-copy {
+    padding: 34px 64px 34px 56px;
+  }
+  .slide {
+    grid-template-columns: 1fr 1fr;
+  }
+  .note-card {
+    padding-inline: 24px;
+  }
+  .film-grid {
+    gap: 36px;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+  .header-inner {
+    gap: 20px;
+  }
+  .brand {
+    font-size: 27px;
+  }
+  .site-header nav {
+    gap: 18px;
+  }
+  .site-header nav a {
+    font-size: 14px;
+  }
+  .section-heading {
+    gap: 28px;
+  }
+  .section-heading > p {
+    max-width: 220px;
+    font-size: 13px;
+  }
+  .slide-copy {
+    padding: 34px 64px 34px 52px;
+  }
+  .slide-copy > p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  .slide-label {
+    letter-spacing: 1px;
+  }
+  .note-card {
+    padding-inline: 18px;
+  }
+  .note-card h3 {
+    font-size: 25px;
+  }
+  .note-card > p {
+    font-size: 13px;
+  }
+  .text-link {
+    font-size: 11px;
+  }
+  .film-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .film-copy > p:not(.eyebrow) {
+    max-width: 55ch;
+  }
+  .film-caption {
+    margin-top: 18px;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+  .header-inner {
+    min-height: 112px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding-block: 12px;
+  }
+  .site-header nav {
+    width: 100%;
+    justify-content: center;
+    gap: clamp(14px, 5vw, 26px);
+  }
+  .site-header nav a {
+    font-size: 12px;
+    padding-block: 9px;
+  }
+  .site-header.is-compact .header-inner {
+    min-height: 96px;
+    padding-block: 8px;
+  }
+  .site-header.is-compact nav a {
+    font-size: 11px;
+  }
+  .site-header.is-compact .brand {
+    font-size: 24px;
+  }
+  .brand .icon {
+    width: 26px;
+    height: 26px;
+  }
+  .hero {
+    height: calc(100svh - 112px);
+    min-height: 580px;
+  }
+  .hero h1 {
+    font-size: 76px;
+    letter-spacing: -3px;
+  }
+  .hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+  .hero-margin {
+    font-size: 7px;
+    letter-spacing: 1px;
+    bottom: 22px;
+  }
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: 30px;
+  }
+  .section-heading > p {
+    max-width: none;
+  }
+  .slide {
+    grid-template-columns: 1fr;
+  }
+  .slide > img {
+    height: 280px;
+    min-height: 0;
+  }
+  .slide-copy {
+    padding: 30px;
+    min-height: 355px;
+  }
+  .slide-copy > p:not(.eyebrow) {
+    max-width: none;
+  }
+  .slide h3 {
+    font-size: 36px;
+  }
+  .slide-label {
+    margin-top: 28px;
+  }
+  .carousel-arrow {
+    top: 118px;
+  }
+  .carousel-hint {
+    display: none;
+  }
+  .carousel-footer > p {
+    min-width: 0;
+  }
+  .notes {
+    padding-top: 5px;
+  }
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  .note-card,
+  .note-card:first-child,
+  .note-card:last-child {
+    padding: 32px 0;
+  }
+  .note-card + .note-card {
+    border-left: 0;
+    border-top: 1px solid $line;
+  }
+  .note-card h3 {
+    font-size: 31px;
+  }
+  .note-card > p {
+    font-size: 14px;
+    max-width: 37ch;
+  }
+  .note-card .text-link {
+    font-size: 12px;
+  }
+  .note-number {
+    right: 0;
+  }
+  .pause-section {
+    min-height: 350px;
+  }
+  .pause-quote {
+    font-size: 36px;
+  }
+  .footer-top {
+    align-items: flex-start;
+    gap: 32px;
+    flex-direction: column;
+  }
+  .footer-end {
+    text-align: left;
+  }
+  .social-links {
+    justify-content: flex-start;
+  }
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 10px;
+  }
+  #note-dialog {
+    padding: 48px 26px 30px;
+  }
+  #note-dialog h2 {
+    font-size: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

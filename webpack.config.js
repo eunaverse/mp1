@@ -1,51 +1,52 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
   devtool: "source-map",
-  devServer: {
-    static: { directory: path.resolve(__dirname, 'build') },
-    open: true,
-    host: "localhost",
-    watchFiles: 'index.html',
-  },
-  context: path.join(__dirname, 'src'),
+  context: path.join(__dirname, "src"),
   entry: "./index.js",
+  devServer: {
+    static: { directory: path.resolve(__dirname, "build") },
+    open: false,
+    host: "127.0.0.1",
+    port: "auto",
+    watchFiles: ["src/**/*.html"],
+  },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/i,
-        loader: "babel-loader",
-      },
+      { test: /\.js$/i, exclude: /node_modules/, loader: "babel-loader" },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+        test: /\.(svg|woff2?|png|jpg|gif|mp4|webm|vtt)$/i,
+        type: "asset/resource",
+        generator: { filename: "media/[name][ext]" },
       },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
+      { test: /\.html$/i, loader: "html-loader" },
     ],
   },
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: './assets/', to: './assets/' },
+        { from: "./.nojekyll", to: "./.nojekyll", noErrorOnMissing: true },
       ],
     }),
-    new HtmlWebpackPlugin({
-      template: "index.html",
-      inject: 'body',
-    }),
+    new MiniCssExtractPlugin({ filename: "styles.css" }),
+    new HtmlWebpackPlugin({ template: "index.html", inject: "body" }),
   ],
   output: {
-    filename: 'bundle.js',
+    filename: "bundle.js",
     path: path.resolve(__dirname, "build"),
+    publicPath: "",
+    clean: true,
   },
 };
